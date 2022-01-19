@@ -19,4 +19,12 @@ const MovieHeader = (props) => {
     </div>);
 }
 
-export default MovieHeader;
+const mapStateToProps = (state) => {
+    return ({
+        displayFavorites: state.favoritesReducer.displayFavorites,
+        appTitle: state.movieReducer.appTitle
+    })
+}
+
+
+export default connect(mapStateToProps)(MovieHeader);
